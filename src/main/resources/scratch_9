@@ -1,0 +1,11 @@
+com
+|
+|- myapp
+    |
+    |- product
+    |
+    |- order
+    |
+    |- customer
+    |
+    |- payment
