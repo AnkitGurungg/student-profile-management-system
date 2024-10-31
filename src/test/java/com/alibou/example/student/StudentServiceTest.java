@@ -16,7 +16,7 @@ class StudentServiceTest {
 
     @InjectMocks
     private StudentService studentService;
-
+     
     // declare the dependencies
     @Mock
     StudentRepository repository;
