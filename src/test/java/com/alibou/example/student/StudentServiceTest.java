@@ -16,7 +16,7 @@ class StudentServiceTest {
 
     @InjectMocks
     private StudentService studentService;
-     
+
     // declare the dependencies
     @Mock
     StudentRepository repository;
@@ -34,7 +34,7 @@ class StudentServiceTest {
         StudentDto dto = new StudentDto(
                 "John",
                 "Doe",
-                "john@mail.com",
+                "john@email.com",
                 1
         );
         Student student = new Student(
