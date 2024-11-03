@@ -4,11 +4,11 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
@@ -87,7 +87,6 @@ class StudentServiceTest {
 
     @Test
     public void should_return_all_students() {
-
         // Given
         List<Student> students = new ArrayList<>();
         students.add(new Student(
@@ -112,5 +111,69 @@ class StudentServiceTest {
 //        Then
         assertEquals(students.size(), studentResponseDtos.size());
         verify(repository, times(1)).findAll();
+    }
+
+    @Test
+    public void should_return_student_by_id() {
+        // Given
+        Integer studentId = 1;
+        Student student = new Student(
+                "John",
+                "Doe",
+                "john@mail.com",
+                20
+        );
+        student.setId(studentId);
+
+//        Mock the calls
+        when(repository.findById(studentId)).thenReturn(Optional.of(student));
+        when(studentMapper.toStudentResponseDto(any(Student.class)))
+                .thenReturn(new StudentResponseDto(
+                    "John",
+                    "Doe",
+                    "john@mail.com"
+                ));
+
+//        When
+        StudentResponseDto dto = studentService.findStudentById(studentId);
+
+//        Then
+        assertEquals(dto.firstname(), student.getFirstname());
+        assertEquals(dto.lastname(), student.getLastname());
+        assertEquals(dto.email(), student.getEmail());
+
+        verify(repository, times(1)).findById(studentId);
+    }
+
+    @Test
+    public void should_find_student_by_name() {
+//        Given
+        String studentName = "John";
+        Student student = new Student(
+                "John",
+                "Doe",
+                "john@mail.com",
+                20
+        );
+        List<Student> students = new ArrayList<>();
+        students.add(student);
+
+//        Mock the calls
+        when(repository.findByFirstnameContaining(studentName))
+                .thenReturn(students);
+        when(studentMapper.toStudentResponseDto(any(Student.class)))
+                .thenReturn(new StudentResponseDto(
+                        "John",
+                        "Doe",
+                        "john@mail.com"
+                ));
+
+//        When
+        var responseDto = studentService.findStudentsByName(studentName);
+
+//        Then
+        assertEquals(students.size(), responseDto.size());
+        verify(repository, times(1))
+                .findByFirstnameContaining(studentName);
     }
 }
