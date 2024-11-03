@@ -21,10 +21,7 @@ public class StudentService {
         StudentDto studentDto
     ){
         var student = studentMapper.toStudent(studentDto);
-//        once try return student
         var savedStudent = repository.save(student);
-//        once try return savedStudent
-
         return studentMapper.toStudentResponseDto(savedStudent);
     }
 
