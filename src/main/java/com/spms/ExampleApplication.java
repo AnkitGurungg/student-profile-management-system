@@ -1,4 +1,4 @@
-package com.alibou.example;
+package com.spms;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

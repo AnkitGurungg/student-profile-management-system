@@ -1,6 +1,6 @@
-package com.alibou.example.studentprofile;
+package com.spms.studentprofile;
 
-import com.alibou.example.student.Student;
+import com.spms.student.Student;
 import jakarta.persistence.*;
 
 @Entity

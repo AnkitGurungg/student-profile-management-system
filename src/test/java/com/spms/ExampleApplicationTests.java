@@ -1,4 +1,4 @@
-package com.alibou.example;
+package com.spms;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

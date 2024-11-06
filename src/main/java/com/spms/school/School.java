@@ -1,6 +1,6 @@
-package com.alibou.example.school;
+package com.spms.school;
 
-import com.alibou.example.student.Student;
+import com.spms.student.Student;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

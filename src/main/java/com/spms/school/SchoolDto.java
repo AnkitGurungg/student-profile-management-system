@@ -1,4 +1,4 @@
-package com.alibou.example.school;
+package com.spms.school;
 
 public record SchoolDto(
         String name

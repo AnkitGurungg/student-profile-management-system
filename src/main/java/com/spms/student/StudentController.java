@@ -1,4 +1,4 @@
-package com.alibou.example.student;
+package com.spms.student;
 
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

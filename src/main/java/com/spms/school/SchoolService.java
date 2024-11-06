@@ -1,4 +1,4 @@
-package com.alibou.example.school;
+package com.spms.school;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
