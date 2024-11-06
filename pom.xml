@@ -8,11 +8,11 @@
         <version>3.3.4</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.alibou</groupId>
-    <artifactId>example</artifactId>
+    <groupId>com</groupId>
+    <artifactId>spms</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>example</name>
-    <description>example</description>
+    <name>spms</name>
+    <description>StudentProfileManagementSystem</description>
     <url/>
     <licenses>
         <license/>
