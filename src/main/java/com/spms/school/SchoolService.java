@@ -33,5 +33,4 @@ public class SchoolService {
                 .map(schoolMapper::toSchoolDto)
                 .collect(Collectors.toList());
     }
-
 }

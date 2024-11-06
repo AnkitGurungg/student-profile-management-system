@@ -29,5 +29,4 @@ public class SchoolController {
     public List<SchoolDto> findAll () {
         return schoolService.findAll();
     }
-
 }
