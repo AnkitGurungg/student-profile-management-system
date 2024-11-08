@@ -1,3 +1,4 @@
+- By feature
 com
 |
 |- myapp
@@ -9,3 +10,48 @@ com
     |- customer
     |
     |- payment
+
+- Layer approach (recommended)
+com
+|
+|- myapp
+    |
+    |- controller
+    |
+    |- services
+    |
+    |- repositories
+    |
+    |- models
+    |
+    |- utils
+
+- By domain
+com
+|
+|- myapp
+    |
+    |- patientManagement
+    |
+    |- billing
+    |
+    |- scheduling
+    |
+    |- medicalRecords
+
+- By component
+com
+|
+|- myapp
+    |
+    |- usercomponent
+    |   |
+    |   |- controller
+    |   |
+    |   |- services
+    |
+    |- productcomponent
+        |
+        |- controller
+        |
+        |- services
